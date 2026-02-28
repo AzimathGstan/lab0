@@ -15,8 +15,9 @@ Next, open your terminal and clone this repository:
 接著，打開終端機並複製此儲存庫：
 
 ```bash
-git clone <YOUR_GITHUB_REPO_URL>
-cd mnist-pytorch-lab
+cd ~
+git clone https://github.com/AzimathGstan/lab0.git
+cd lab0
 ```
 
 Install the remaining required packages (like our progress bar):  
