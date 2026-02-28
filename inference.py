@@ -22,7 +22,7 @@ def print_ascii_image(image_tensor):
 
 def infer():
     # Force CPU to match training environment
-    device = torch.device('cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # 1. Load the model architecture and weights
     model = SimpleMNIST().to(device)

@@ -5,7 +5,7 @@ from tqdm import tqdm
 from model import SimpleMNIST
 
 def benchmark():
-    device = torch.device('cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print("Loading test dataset for benchmarking...")
 
     transform = transforms.Compose([

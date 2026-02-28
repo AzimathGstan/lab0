@@ -8,7 +8,7 @@ from model import SimpleMNIST # The model we built earlier
 
 def train():
     # 1. Setup: Force CPU to avoid driver nightmares
-    device = torch.device('cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
 
     # 2. Data Loading

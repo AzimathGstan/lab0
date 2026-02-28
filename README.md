@@ -1,31 +1,26 @@
 # PyTorch 101: MNIST Digit Recognizer / 手寫數字辨識入門
 
-Welcome to the introductory PyTorch lab! In this session, we will build, train, and test a Convolutional Neural Network (CNN) to recognize handwritten digits. This repository is specifically optimized for CPU training, meaning it will run smoothly in your WSL (Ubuntu) environment without needing dedicated GPU drivers.
+Welcome to the introductory PyTorch lab! In this session, we will build, train, and test a Convolutional Neural Network (CNN) to recognize handwritten digits. This code automatically detects your hardware—it will run on a GPU if available, or gracefully fall back to the CPU.
 
-歡迎來到 PyTorch 入門實驗課！在本節課中，我們將建立、訓練並測試一個卷積神經網路（CNN）來辨識手寫數字。此儲存庫專為 CPU 訓練進行了最佳化，這意味著它可以在您的 WSL (Ubuntu) 環境中順暢執行，無需安裝複雜的 GPU 驅動程式。
+歡迎來到 PyTorch 入門實驗課！在本節課中，我們將建立、訓練並測試一個卷積神經網路（CNN）來辨識手寫數字。這份程式碼會自動偵測您的硬體設備——如果有 GPU 則會使用 GPU 加速，否則會平順地切換至 CPU 執行。
 
 ---
 
-## 🛠️ Step 1: Environment Setup / 步驟一：環境設定
+## 🛠️ Step 1: Clone & Setup / 步驟一：下載與設定
 
-First, open your WSL Ubuntu terminal and clone this repository.  
-首先，打開您的 WSL Ubuntu 終端機並複製此儲存庫：
+First, make sure you have activated your Conda environment and installed PyTorch according to the instructions in the PPT.  
+首先，請確保您已經依照投影片 (PPT) 的指示，啟動了您的 Conda 虛擬環境並完成了 PyTorch 的安裝。
 
-```bash
-git clone https://github.com/AzimathGstan/lab0.git
-cd lab0
-```
-
-To keep our dependencies from clashing with your system Python, create and activate a virtual environment.  
-為了避免套件與系統的 Python 環境發生衝突，請建立並啟動虛擬環境：
+Next, open your terminal and clone this repository:  
+接著，打開終端機並複製此儲存庫：
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+git clone <YOUR_GITHUB_REPO_URL>
+cd mnist-pytorch-lab
 ```
 
-Install the required CPU-optimized PyTorch libraries. We use a custom index to ensure we don't download massive, unnecessary GPU binaries.  
-安裝所需的 CPU 最佳化 PyTorch 套件。我們使用自訂的下載來源，以確保不會下載到龐大且不必要的 GPU 檔案：
+Install the remaining required packages (like our progress bar):  
+安裝剩餘的必要套件（例如進度條工具）：
 
 ```bash
 pip install -r requirements.txt
