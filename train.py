@@ -7,7 +7,7 @@ from tqdm import tqdm
 from model import SimpleMNIST # The model we built earlier
 
 def train():
-    # 1. Setup: Force CPU to avoid driver nightmares
+    # 1. Setup: Using GPU if available, otherwise CPU
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
 

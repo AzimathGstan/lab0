@@ -52,7 +52,7 @@ def infer():
     # 4. Run the forward pass
     with torch.no_grad():
         # Add a batch dimension: [1, 28, 28] becomes [1, 1, 28, 28]
-        output = model(image.unsqueeze(0))
+        output = model(image.unsqueeze(0).to(device))
         # Get the index of the highest log-probability
         prediction = output.argmax(dim=1, keepdim=True).item()
 
