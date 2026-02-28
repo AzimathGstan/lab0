@@ -101,6 +101,12 @@ Once installed, launch the interactive canvas:
 python3 interactive.py
 ```
 
+> **🛠️ Troubleshooting / 疑難排解：** > If the script crashes with a `libGL`, `XCB`, or `Qt` error, your WSL environment is missing core graphical libraries. Run this command to fix it, then try running the Python script again:  
+> 如果程式因 `libGL`、`XCB` 或 `Qt` 錯誤而崩潰，代表您的 WSL 環境缺少核心的圖形渲染函式庫。請執行以下指令進行修復，然後再次執行 Python 程式：  
+> ```bash
+> sudo apt-get update && sudo apt-get install -y libgl1 libglib2.0-0 libsm6 libxext6 libxrender1 libxcb-xinerama0 libxcb-cursor0 libxkbcommon-x11-0
+> ```
+
 * **Draw** a number (0-9) with your mouse. / 用滑鼠**畫出**一個數字 (0-9)。
 * **Spacebar:** Force the model to predict your drawing. / 按下 **空白鍵** 讓模型進行預測。
 * **C:** Clear the canvas. / 按下 **C** 清除畫布。
